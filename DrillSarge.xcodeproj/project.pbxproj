@@ -1,0 +1,623 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		CEFFEADF2AD02E0800466F80 /* DrillSargeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFFEADE2AD02E0800466F80 /* DrillSargeApp.swift */; };
+		CEFFEAE12AD02E0800466F80 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFFEAE02AD02E0800466F80 /* ContentView.swift */; };
+		CEFFEAE32AD02E0900466F80 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CEFFEAE22AD02E0900466F80 /* Assets.xcassets */; };
+		CEFFEAE62AD02E0900466F80 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CEFFEAE52AD02E0900466F80 /* Preview Assets.xcassets */; };
+		CEFFEAF02AD02E0900466F80 /* DrillSargeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFFEAEF2AD02E0900466F80 /* DrillSargeTests.swift */; };
+		CEFFEAFA2AD02E0900466F80 /* DrillSargeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFFEAF92AD02E0900466F80 /* DrillSargeUITests.swift */; };
+		CEFFEAFC2AD02E0900466F80 /* DrillSargeUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFFEAFB2AD02E0900466F80 /* DrillSargeUITestsLaunchTests.swift */; };
+		CEFFEB092AD02EA200466F80 /* ModelData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFFEB082AD02EA200466F80 /* ModelData.swift */; };
+		CEFFEB0B2AD02EFD00466F80 /* Program.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFFEB0A2AD02EFD00466F80 /* Program.swift */; };
+		CEFFEB0F2AD03A0E00466F80 /* ProgramList.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFFEB0E2AD03A0E00466F80 /* ProgramList.swift */; };
+		CEFFEB112AD03A7F00466F80 /* ProgramDetailList.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFFEB102AD03A7F00466F80 /* ProgramDetailList.swift */; };
+		CEFFEB132AD03A9800466F80 /* Exercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFFEB122AD03A9800466F80 /* Exercise.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		CEFFEAEC2AD02E0900466F80 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CEFFEAD32AD02E0800466F80 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CEFFEADA2AD02E0800466F80;
+			remoteInfo = DrillSarge;
+		};
+		CEFFEAF62AD02E0900466F80 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CEFFEAD32AD02E0800466F80 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CEFFEADA2AD02E0800466F80;
+			remoteInfo = DrillSarge;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		CEFFEADB2AD02E0800466F80 /* DrillSarge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DrillSarge.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		CEFFEADE2AD02E0800466F80 /* DrillSargeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrillSargeApp.swift; sourceTree = "<group>"; };
+		CEFFEAE02AD02E0800466F80 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		CEFFEAE22AD02E0900466F80 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		CEFFEAE52AD02E0900466F80 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		CEFFEAEB2AD02E0900466F80 /* DrillSargeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DrillSargeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		CEFFEAEF2AD02E0900466F80 /* DrillSargeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrillSargeTests.swift; sourceTree = "<group>"; };
+		CEFFEAF52AD02E0900466F80 /* DrillSargeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DrillSargeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		CEFFEAF92AD02E0900466F80 /* DrillSargeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrillSargeUITests.swift; sourceTree = "<group>"; };
+		CEFFEAFB2AD02E0900466F80 /* DrillSargeUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrillSargeUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		CEFFEB082AD02EA200466F80 /* ModelData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelData.swift; sourceTree = "<group>"; };
+		CEFFEB0A2AD02EFD00466F80 /* Program.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Program.swift; sourceTree = "<group>"; };
+		CEFFEB0E2AD03A0E00466F80 /* ProgramList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgramList.swift; sourceTree = "<group>"; };
+		CEFFEB102AD03A7F00466F80 /* ProgramDetailList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgramDetailList.swift; sourceTree = "<group>"; };
+		CEFFEB122AD03A9800466F80 /* Exercise.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Exercise.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		CEFFEAD82AD02E0800466F80 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CEFFEAE82AD02E0900466F80 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CEFFEAF22AD02E0900466F80 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		CEFFEAD22AD02E0800466F80 = {
+			isa = PBXGroup;
+			children = (
+				CEFFEADD2AD02E0800466F80 /* DrillSarge */,
+				CEFFEAEE2AD02E0900466F80 /* DrillSargeTests */,
+				CEFFEAF82AD02E0900466F80 /* DrillSargeUITests */,
+				CEFFEADC2AD02E0800466F80 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		CEFFEADC2AD02E0800466F80 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				CEFFEADB2AD02E0800466F80 /* DrillSarge.app */,
+				CEFFEAEB2AD02E0900466F80 /* DrillSargeTests.xctest */,
+				CEFFEAF52AD02E0900466F80 /* DrillSargeUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		CEFFEADD2AD02E0800466F80 /* DrillSarge */ = {
+			isa = PBXGroup;
+			children = (
+				CEFFEADE2AD02E0800466F80 /* DrillSargeApp.swift */,
+				CEFFEB0D2AD0398800466F80 /* Views */,
+				CEFFEAE22AD02E0900466F80 /* Assets.xcassets */,
+				CEFFEAE42AD02E0900466F80 /* Preview Content */,
+				CEFFEB0C2AD0397D00466F80 /* Models */,
+			);
+			path = DrillSarge;
+			sourceTree = "<group>";
+		};
+		CEFFEAE42AD02E0900466F80 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				CEFFEAE52AD02E0900466F80 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		CEFFEAEE2AD02E0900466F80 /* DrillSargeTests */ = {
+			isa = PBXGroup;
+			children = (
+				CEFFEAEF2AD02E0900466F80 /* DrillSargeTests.swift */,
+			);
+			path = DrillSargeTests;
+			sourceTree = "<group>";
+		};
+		CEFFEAF82AD02E0900466F80 /* DrillSargeUITests */ = {
+			isa = PBXGroup;
+			children = (
+				CEFFEAF92AD02E0900466F80 /* DrillSargeUITests.swift */,
+				CEFFEAFB2AD02E0900466F80 /* DrillSargeUITestsLaunchTests.swift */,
+			);
+			path = DrillSargeUITests;
+			sourceTree = "<group>";
+		};
+		CEFFEB0C2AD0397D00466F80 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				CEFFEB082AD02EA200466F80 /* ModelData.swift */,
+				CEFFEB0A2AD02EFD00466F80 /* Program.swift */,
+				CEFFEB122AD03A9800466F80 /* Exercise.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		CEFFEB0D2AD0398800466F80 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				CEFFEAE02AD02E0800466F80 /* ContentView.swift */,
+				CEFFEB0E2AD03A0E00466F80 /* ProgramList.swift */,
+				CEFFEB102AD03A7F00466F80 /* ProgramDetailList.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		CEFFEADA2AD02E0800466F80 /* DrillSarge */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CEFFEAFF2AD02E0900466F80 /* Build configuration list for PBXNativeTarget "DrillSarge" */;
+			buildPhases = (
+				CEFFEAD72AD02E0800466F80 /* Sources */,
+				CEFFEAD82AD02E0800466F80 /* Frameworks */,
+				CEFFEAD92AD02E0800466F80 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = DrillSarge;
+			productName = DrillSarge;
+			productReference = CEFFEADB2AD02E0800466F80 /* DrillSarge.app */;
+			productType = "com.apple.product-type.application";
+		};
+		CEFFEAEA2AD02E0900466F80 /* DrillSargeTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CEFFEB022AD02E0900466F80 /* Build configuration list for PBXNativeTarget "DrillSargeTests" */;
+			buildPhases = (
+				CEFFEAE72AD02E0900466F80 /* Sources */,
+				CEFFEAE82AD02E0900466F80 /* Frameworks */,
+				CEFFEAE92AD02E0900466F80 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CEFFEAED2AD02E0900466F80 /* PBXTargetDependency */,
+			);
+			name = DrillSargeTests;
+			productName = DrillSargeTests;
+			productReference = CEFFEAEB2AD02E0900466F80 /* DrillSargeTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		CEFFEAF42AD02E0900466F80 /* DrillSargeUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CEFFEB052AD02E0900466F80 /* Build configuration list for PBXNativeTarget "DrillSargeUITests" */;
+			buildPhases = (
+				CEFFEAF12AD02E0900466F80 /* Sources */,
+				CEFFEAF22AD02E0900466F80 /* Frameworks */,
+				CEFFEAF32AD02E0900466F80 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CEFFEAF72AD02E0900466F80 /* PBXTargetDependency */,
+			);
+			name = DrillSargeUITests;
+			productName = DrillSargeUITests;
+			productReference = CEFFEAF52AD02E0900466F80 /* DrillSargeUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		CEFFEAD32AD02E0800466F80 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1500;
+				LastUpgradeCheck = 1500;
+				TargetAttributes = {
+					CEFFEADA2AD02E0800466F80 = {
+						CreatedOnToolsVersion = 15.0;
+					};
+					CEFFEAEA2AD02E0900466F80 = {
+						CreatedOnToolsVersion = 15.0;
+						TestTargetID = CEFFEADA2AD02E0800466F80;
+					};
+					CEFFEAF42AD02E0900466F80 = {
+						CreatedOnToolsVersion = 15.0;
+						TestTargetID = CEFFEADA2AD02E0800466F80;
+					};
+				};
+			};
+			buildConfigurationList = CEFFEAD62AD02E0800466F80 /* Build configuration list for PBXProject "DrillSarge" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = CEFFEAD22AD02E0800466F80;
+			productRefGroup = CEFFEADC2AD02E0800466F80 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				CEFFEADA2AD02E0800466F80 /* DrillSarge */,
+				CEFFEAEA2AD02E0900466F80 /* DrillSargeTests */,
+				CEFFEAF42AD02E0900466F80 /* DrillSargeUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		CEFFEAD92AD02E0800466F80 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CEFFEAE62AD02E0900466F80 /* Preview Assets.xcassets in Resources */,
+				CEFFEAE32AD02E0900466F80 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CEFFEAE92AD02E0900466F80 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CEFFEAF32AD02E0900466F80 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		CEFFEAD72AD02E0800466F80 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CEFFEB0B2AD02EFD00466F80 /* Program.swift in Sources */,
+				CEFFEAE12AD02E0800466F80 /* ContentView.swift in Sources */,
+				CEFFEADF2AD02E0800466F80 /* DrillSargeApp.swift in Sources */,
+				CEFFEB0F2AD03A0E00466F80 /* ProgramList.swift in Sources */,
+				CEFFEB092AD02EA200466F80 /* ModelData.swift in Sources */,
+				CEFFEB132AD03A9800466F80 /* Exercise.swift in Sources */,
+				CEFFEB112AD03A7F00466F80 /* ProgramDetailList.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CEFFEAE72AD02E0900466F80 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CEFFEAF02AD02E0900466F80 /* DrillSargeTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CEFFEAF12AD02E0900466F80 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CEFFEAFA2AD02E0900466F80 /* DrillSargeUITests.swift in Sources */,
+				CEFFEAFC2AD02E0900466F80 /* DrillSargeUITestsLaunchTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		CEFFEAED2AD02E0900466F80 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CEFFEADA2AD02E0800466F80 /* DrillSarge */;
+			targetProxy = CEFFEAEC2AD02E0900466F80 /* PBXContainerItemProxy */;
+		};
+		CEFFEAF72AD02E0900466F80 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CEFFEADA2AD02E0800466F80 /* DrillSarge */;
+			targetProxy = CEFFEAF62AD02E0900466F80 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		CEFFEAFD2AD02E0900466F80 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		CEFFEAFE2AD02E0900466F80 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		CEFFEB002AD02E0900466F80 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"DrillSarge/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.harrylundstrom.DrillSarge;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		CEFFEB012AD02E0900466F80 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"DrillSarge/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.harrylundstrom.DrillSarge;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		CEFFEB032AD02E0900466F80 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.harrylundstrom.DrillSargeTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DrillSarge.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/DrillSarge";
+			};
+			name = Debug;
+		};
+		CEFFEB042AD02E0900466F80 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.harrylundstrom.DrillSargeTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DrillSarge.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/DrillSarge";
+			};
+			name = Release;
+		};
+		CEFFEB062AD02E0900466F80 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.harrylundstrom.DrillSargeUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = DrillSarge;
+			};
+			name = Debug;
+		};
+		CEFFEB072AD02E0900466F80 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.harrylundstrom.DrillSargeUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = DrillSarge;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		CEFFEAD62AD02E0800466F80 /* Build configuration list for PBXProject "DrillSarge" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CEFFEAFD2AD02E0900466F80 /* Debug */,
+				CEFFEAFE2AD02E0900466F80 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CEFFEAFF2AD02E0900466F80 /* Build configuration list for PBXNativeTarget "DrillSarge" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CEFFEB002AD02E0900466F80 /* Debug */,
+				CEFFEB012AD02E0900466F80 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CEFFEB022AD02E0900466F80 /* Build configuration list for PBXNativeTarget "DrillSargeTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CEFFEB032AD02E0900466F80 /* Debug */,
+				CEFFEB042AD02E0900466F80 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CEFFEB052AD02E0900466F80 /* Build configuration list for PBXNativeTarget "DrillSargeUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CEFFEB062AD02E0900466F80 /* Debug */,
+				CEFFEB072AD02E0900466F80 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = CEFFEAD32AD02E0800466F80 /* Project object */;
+}
