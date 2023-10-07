@@ -15,12 +15,21 @@ struct ProgramDetailList: View {
         modelData.programs.firstIndex(where: { $0.id == program.id })!
     }
 
+    @State private var defaultExercise = Exercise.default
+
+    private func exerciseIndex(exercise: Exercise) -> Int {
+        modelData.programs[programIndex].exercises.firstIndex(where: { $0.id == exercise.id })!
+    }
+
     var body: some View {
         List {
             ForEach(modelData.programs[programIndex].exercises) { exercise in
-
                 NavigationLink {
-                    ExerciseDetail(program: program, exercise: exercise)
+                    ExerciseDetail(exercise: $defaultExercise).onAppear {
+                        defaultExercise = exercise
+                    }.onDisappear {
+                        modelData.programs[programIndex].exercises[exerciseIndex(exercise: exercise)] = defaultExercise
+                    }
                 } label: {
                     Text(exercise.name)
                 }
