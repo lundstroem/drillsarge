@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CEB9DAA92AD177BB00F1F81E /* ExerciseDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB9DAA82AD177BB00F1F81E /* ExerciseDetail.swift */; };
 		CEFFEADF2AD02E0800466F80 /* DrillSargeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFFEADE2AD02E0800466F80 /* DrillSargeApp.swift */; };
 		CEFFEAE12AD02E0800466F80 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFFEAE02AD02E0800466F80 /* ContentView.swift */; };
 		CEFFEAE32AD02E0900466F80 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CEFFEAE22AD02E0900466F80 /* Assets.xcassets */; };
@@ -39,6 +40,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		CEB9DAA82AD177BB00F1F81E /* ExerciseDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseDetail.swift; sourceTree = "<group>"; };
 		CEFFEADB2AD02E0800466F80 /* DrillSarge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DrillSarge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEFFEADE2AD02E0800466F80 /* DrillSargeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrillSargeApp.swift; sourceTree = "<group>"; };
 		CEFFEAE02AD02E0800466F80 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -154,6 +156,7 @@
 				CEFFEAE02AD02E0800466F80 /* ContentView.swift */,
 				CEFFEB0E2AD03A0E00466F80 /* ProgramList.swift */,
 				CEFFEB102AD03A7F00466F80 /* ProgramDetailList.swift */,
+				CEB9DAA82AD177BB00F1F81E /* ExerciseDetail.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -290,6 +293,7 @@
 			files = (
 				CEFFEB0B2AD02EFD00466F80 /* Program.swift in Sources */,
 				CEFFEAE12AD02E0800466F80 /* ContentView.swift in Sources */,
+				CEB9DAA92AD177BB00F1F81E /* ExerciseDetail.swift in Sources */,
 				CEFFEADF2AD02E0800466F80 /* DrillSargeApp.swift in Sources */,
 				CEFFEB0F2AD03A0E00466F80 /* ProgramList.swift in Sources */,
 				CEFFEB092AD02EA200466F80 /* ModelData.swift in Sources */,
