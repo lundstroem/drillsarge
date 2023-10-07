@@ -11,7 +11,10 @@ struct ProgramList: View {
     @EnvironmentObject var modelData: ModelData
 
     var body: some View {
-        NavigationView {
+        NavigationStack {
+            Text("DrillSarge")
+                .bold()
+                .font(.title)
             List {
                 ForEach(modelData.programs) { program in
                     NavigationLink {
@@ -22,11 +25,14 @@ struct ProgramList: View {
                 }.onMove { from, to in
                     modelData.programs.move(fromOffsets: from, toOffset: to)
                 }
-            }.toolbar {
-                Button {
-                    modelData.programs.append(Program(name: "New program"))
-                } label: {
-                    Label("Add row", systemImage: "plus")
+            }
+            .toolbar {
+                ToolbarItemGroup(placement: .topBarTrailing) {
+                    Button {
+                        modelData.programs.append(Program(name: "New program"))
+                    } label: {
+                        Label("Add row", systemImage: "plus")
+                    }
                 }
             }
         }

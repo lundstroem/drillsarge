@@ -16,19 +16,21 @@ struct ExerciseDetail: View {
     @Binding var exercise: Exercise
 
     var body: some View {
-        VStack {
-            TextField(
-                exercise.name,
+        NavigationStack {
+            VStack {
+                TextField(
+                    exercise.name,
                     text: $exercise.name
                 ).border(.secondary)
-            Stepper {
-                Text("Seconds: \(exercise.duration)")
-            } onIncrement: {
-                incrementStep()
-            } onDecrement: {
-                decrementStep()
-            }
-        }.padding(20)
+                Stepper {
+                    Text("Seconds: \(exercise.duration)")
+                } onIncrement: {
+                    incrementStep()
+                } onDecrement: {
+                    decrementStep()
+                }
+            }.padding(20)
+        }.navigationTitle(exercise.name)
     }
 
     private func incrementStep() {

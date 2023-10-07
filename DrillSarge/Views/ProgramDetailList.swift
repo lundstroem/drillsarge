@@ -22,19 +22,49 @@ struct ProgramDetailList: View {
     }
 
     var body: some View {
-        List {
-            ForEach(modelData.programs[programIndex].exercises) { exercise in
-                NavigationLink {
-                    ExerciseDetail(exercise: $defaultExercise).onAppear {
-                        defaultExercise = exercise
-                    }.onDisappear {
-                        modelData.programs[programIndex].exercises[exerciseIndex(exercise: exercise)] = defaultExercise
+        NavigationStack {
+            List {
+                ForEach(modelData.programs[programIndex].exercises) { exercise in
+                    NavigationLink {
+                        ExerciseDetail(exercise: $defaultExercise).onAppear {
+                            defaultExercise = exercise
+                        }.onDisappear {
+                            modelData.programs[programIndex].exercises[exerciseIndex(exercise: exercise)] = defaultExercise
+                        }
+                    } label: {
+                        Text(exercise.name)
                     }
-                } label: {
-                    Text(exercise.name)
+                }
+            }.toolbar {
+                ToolbarItemGroup(placement: .bottomBar) {
+                    Button {
+                        print("Play")
+                    } label: {
+                        Label("play", systemImage: "play")
+                    }
+                    Spacer()
+                    Button {
+                        print("Stop")
+                    } label: {
+                        Label("shuffle", systemImage: "stop")
+                    }
+                    Spacer()
+                    Button {
+                        print("Shuffle")
+                    } label: {
+                        Label("shuffle", systemImage: "shuffle")
+                    }
+                }
+
+                ToolbarItemGroup(placement: .topBarTrailing) {
+                    Button {
+                        modelData.programs[programIndex].exercises.append(Exercise(name: "new exercise", duration: 15))
+                    } label: {
+                        Label("Add row", systemImage: "plus")
+                    }
                 }
             }
-        }
+        }.navigationTitle(modelData.programs[programIndex].name)
     }
 }
 
