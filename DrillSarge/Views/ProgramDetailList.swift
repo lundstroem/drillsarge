@@ -38,7 +38,7 @@ struct ProgramDetailList: View {
             }.toolbar {
                 ToolbarItemGroup(placement: .bottomBar) {
                     Button {
-                        print("Play")
+                        ProgramRunner.run(program: program)
                     } label: {
                         Label("play", systemImage: "play")
                     }
