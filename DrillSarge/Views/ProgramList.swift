@@ -15,7 +15,7 @@ struct ProgramList: View {
             List {
                 ForEach(modelData.programs) { program in
                     NavigationLink {
-                        ProgramDetailList()
+                        ProgramDetailList(program: program)
                     } label: {
                         Text(program.name)
                     }

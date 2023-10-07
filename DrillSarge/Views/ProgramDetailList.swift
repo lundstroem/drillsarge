@@ -8,11 +8,14 @@
 import SwiftUI
 
 struct ProgramDetailList: View {
+
+    var program: Program
+
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        Text("hej")
     }
 }
 
 #Preview {
-    ProgramDetailList()
+    ProgramDetailList(program: Program(name: "Program"))
 }
