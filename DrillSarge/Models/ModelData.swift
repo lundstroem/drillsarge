@@ -10,6 +10,7 @@ import Combine
 
 final class ModelData: ObservableObject {
     // TODO: DO some switch here between mock and real data. Best practices?
+    // Can just leave one defaultprogram so it's not empty.
     //@Published var programs: [Program] = []
     @Published var programs: [Program] = [Program(name: "mock program 1", exercises:
                                                     [Exercise(name: "mock exercise 1", duration: 30),
@@ -19,4 +20,34 @@ final class ModelData: ObservableObject {
                                                     [Exercise(name: "mock exercise 4", duration: 30),
                                                      Exercise(name: "mock exercise 5", duration: 15),
                                                      Exercise(name: "mock exercise 6", duration: 15)])]
+
+    func storeData() {
+        let jsonEncoder = JSONEncoder()
+        var jsonData: Data?
+        do {
+            jsonData = try jsonEncoder.encode(programs)
+        } catch {
+            print("Unexpected error: \(error).")
+        }
+        
+        if let jsonData = jsonData {
+            let jsonString = String(data: jsonData, encoding: .utf8)
+            print("jsonString:\(jsonString ?? "")")
+
+            let defaults = UserDefaults.standard
+            defaults.set(jsonString, forKey: "programs")
+        }
+    }
+
+    func loadData() {
+        let defaults = UserDefaults.standard
+
+        if let jsonString: String = defaults.object(forKey: "programs") as? String {
+            if let data = jsonString.data(using: .utf8) {
+                let loadedPrograms: [Program] = try! JSONDecoder().decode([Program].self, from: data)
+                print("loadedPrograms: \(loadedPrograms.count)")
+                programs = loadedPrograms
+            }
+        }
+    }
 }

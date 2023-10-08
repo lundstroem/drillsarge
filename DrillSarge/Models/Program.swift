@@ -7,8 +7,8 @@
 
 import Foundation
 
-struct Program: Hashable, Identifiable {
-    let id = UUID()
+struct Program: Hashable, Identifiable, Codable {
+    var id = UUID()
     var name: String
     var exercises: [Exercise] = []
 }

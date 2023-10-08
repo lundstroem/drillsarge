@@ -35,6 +35,9 @@ struct ProgramList: View {
                     }
                 }
             }
+        }.onAppear {
+            // Load data if available
+            modelData.loadData()
         }
     }
 }

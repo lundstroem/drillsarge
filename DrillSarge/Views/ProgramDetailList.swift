@@ -29,7 +29,12 @@ struct ProgramDetailList: View {
                         ExerciseDetail(exercise: $defaultExercise).onAppear {
                             defaultExercise = exercise
                         }.onDisappear {
-                            modelData.programs[programIndex].exercises[exerciseIndex(exercise: exercise)] = defaultExercise
+                            // Check if data has changed
+
+                            if modelData.programs[programIndex].exercises[exerciseIndex(exercise: exercise)] != defaultExercise {
+                                modelData.programs[programIndex].exercises[exerciseIndex(exercise: exercise)] = defaultExercise
+                                modelData.storeData()
+                            }
                         }
                     } label: {
                         Text(exercise.name)

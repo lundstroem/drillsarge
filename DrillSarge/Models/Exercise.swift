@@ -7,11 +7,11 @@
 
 import Foundation
 
-struct Exercise: Hashable, Identifiable {
+struct Exercise: Hashable, Identifiable, Codable {
 
     static var `default` = Exercise(name: "name", duration: 15)
 
-    let id = UUID()
+    var id = UUID()
     var name: String
     var duration: Int
 }
