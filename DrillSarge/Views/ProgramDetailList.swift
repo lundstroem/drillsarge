@@ -44,13 +44,13 @@ struct ProgramDetailList: View {
                     }
                     Spacer()
                     Button {
-                        print("Stop")
+                        ProgramRunner.stop()
                     } label: {
-                        Label("shuffle", systemImage: "stop")
+                        Label("stop", systemImage: "stop")
                     }
                     Spacer()
                     Button {
-                        print("Shuffle")
+                        ProgramRunner.run(program: program, shuffle: true)
                     } label: {
                         Label("shuffle", systemImage: "shuffle")
                     }
