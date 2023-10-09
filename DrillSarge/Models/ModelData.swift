@@ -6,12 +6,9 @@
 //
 
 import Foundation
-import Combine
 
 final class ModelData: ObservableObject {
-    // TODO: DO some switch here between mock and real data. Best practices?
-    // Can just leave one defaultprogram so it's not empty.
-    //@Published var programs: [Program] = []
+
     @Published var programs: [Program] = [Program(name: "mock program 1", exercises:
                                                     [Exercise(name: "mock exercise 1", duration: 30),
                                                      Exercise(name: "mock exercise 2", duration: 15),

@@ -9,10 +9,6 @@ import SwiftUI
 
 struct ExerciseDetail: View {
 
-    // stepper
-    @State private var durationValue = 0
-    @State private var name: String = ""
-
     @Binding var exercise: Exercise
 
     var body: some View {
@@ -22,6 +18,7 @@ struct ExerciseDetail: View {
                     exercise.name,
                     text: $exercise.name
                 ).border(.secondary)
+
                 Stepper {
                     Text("Seconds: \(exercise.duration)")
                 } onIncrement: {

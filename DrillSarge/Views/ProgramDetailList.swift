@@ -26,10 +26,23 @@ struct ProgramDetailList: View {
             List {
                 ForEach(modelData.programs[programIndex].exercises) { exercise in
                     NavigationLink {
+
+                        // Send in a binding to defaultExercise so
+                        // ExerciseDetail gets read and write access
+                        // to it
+
                         ExerciseDetail(exercise: $defaultExercise).onAppear {
+
+                            // Update defaultExercise with the exercise
+                            // from list
+
                             defaultExercise = exercise
                         }.onDisappear {
-                            // Check if data has changed
+
+                            // Check if defaultExercise has been edited
+                            // and differs from the one in modelData. If
+                            // so, store the edited version in modelData
+                            // and write to persistent storage
 
                             if modelData.programs[programIndex].exercises[exerciseIndex(exercise: exercise)] != defaultExercise {
                                 modelData.programs[programIndex].exercises[exerciseIndex(exercise: exercise)] = defaultExercise
