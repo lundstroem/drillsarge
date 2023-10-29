@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import AVFoundation
 
 struct ExerciseDetail: View {
 
@@ -13,20 +14,21 @@ struct ExerciseDetail: View {
 
     var body: some View {
         NavigationStack {
-            VStack {
-                TextField(
-                    exercise.name,
-                    text: $exercise.name
-                ).border(.secondary)
-
-                Stepper {
-                    Text("Seconds: \(exercise.duration)")
-                } onIncrement: {
-                    incrementStep()
-                } onDecrement: {
-                    decrementStep()
+            Form {
+                Section {
+                    TextField(
+                        exercise.name,
+                        text: $exercise.name
+                    ).textFieldStyle(.plain)
+                    Stepper {
+                        Text("duration \(exercise.duration)s")
+                    } onIncrement: {
+                        incrementStep()
+                    } onDecrement: {
+                        decrementStep()
+                    }
                 }
-            }.padding(20)
+            }.listRowSeparator(.hidden)
         }.navigationTitle(exercise.name)
     }
 

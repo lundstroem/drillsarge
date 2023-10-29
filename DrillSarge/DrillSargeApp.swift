@@ -9,11 +9,19 @@ import SwiftUI
 
 @main
 struct DrillSargeApp: App {
+
+    /*
+
+     TODO:
+     - Cancel edit of program to not store changes
+
+     */
     @StateObject private var modelData = ModelData()
+    @StateObject private var programRunner = ProgramRunner()
 
     var body: some Scene {
         WindowGroup {
-            ContentView().environmentObject(modelData)
+            ContentView().environmentObject(modelData).environmentObject(programRunner)
         }
     }
 }

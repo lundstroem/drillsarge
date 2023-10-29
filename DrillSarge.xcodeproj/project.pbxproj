@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4C06F46D2AEE7BC6001EB5DA /* Voice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C06F46C2AEE7BC6001EB5DA /* Voice.swift */; };
+		4CE53ADA2AEEA7F6003AEB8B /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CE53AD92AEEA7F6003AEB8B /* SettingsView.swift */; };
 		CEB9DAA92AD177BB00F1F81E /* ExerciseDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB9DAA82AD177BB00F1F81E /* ExerciseDetail.swift */; };
 		CEB9DAAD2AD1B21900F1F81E /* ProgramRunner.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB9DAAC2AD1B21900F1F81E /* ProgramRunner.swift */; };
 		CEFFEADF2AD02E0800466F80 /* DrillSargeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFFEADE2AD02E0800466F80 /* DrillSargeApp.swift */; };
@@ -41,6 +43,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4C06F46C2AEE7BC6001EB5DA /* Voice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Voice.swift; sourceTree = "<group>"; };
+		4CE53AD92AEEA7F6003AEB8B /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		CEB9DAA82AD177BB00F1F81E /* ExerciseDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseDetail.swift; sourceTree = "<group>"; };
 		CEB9DAAC2AD1B21900F1F81E /* ProgramRunner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgramRunner.swift; sourceTree = "<group>"; };
 		CEFFEADB2AD02E0800466F80 /* DrillSarge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DrillSarge.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -149,6 +153,7 @@
 				CEFFEB082AD02EA200466F80 /* ModelData.swift */,
 				CEFFEB0A2AD02EFD00466F80 /* Program.swift */,
 				CEFFEB122AD03A9800466F80 /* Exercise.swift */,
+				4C06F46C2AEE7BC6001EB5DA /* Voice.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -160,6 +165,7 @@
 				CEFFEB0E2AD03A0E00466F80 /* ProgramList.swift */,
 				CEFFEB102AD03A7F00466F80 /* ProgramDetailList.swift */,
 				CEB9DAA82AD177BB00F1F81E /* ExerciseDetail.swift */,
+				4CE53AD92AEEA7F6003AEB8B /* SettingsView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -302,7 +308,9 @@
 				CEFFEB0F2AD03A0E00466F80 /* ProgramList.swift in Sources */,
 				CEFFEB092AD02EA200466F80 /* ModelData.swift in Sources */,
 				CEFFEB132AD03A9800466F80 /* Exercise.swift in Sources */,
+				4C06F46D2AEE7BC6001EB5DA /* Voice.swift in Sources */,
 				CEFFEB112AD03A7F00466F80 /* ProgramDetailList.swift in Sources */,
+				4CE53ADA2AEEA7F6003AEB8B /* SettingsView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -466,7 +474,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"DrillSarge/Preview Content\"";
-				DEVELOPMENT_TEAM = H5727LQSV7;
+				DEVELOPMENT_TEAM = QM9YTQA8XQ;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;

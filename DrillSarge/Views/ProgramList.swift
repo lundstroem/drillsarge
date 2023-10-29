@@ -9,6 +9,7 @@ import SwiftUI
 
 struct ProgramList: View {
     @EnvironmentObject var modelData: ModelData
+    @State private var showingSettingsSheet = false
 
     var body: some View {
         NavigationStack {
@@ -32,6 +33,16 @@ struct ProgramList: View {
                         modelData.programs.append(Program(name: "New program"))
                     } label: {
                         Label("Add row", systemImage: "plus")
+                    }
+                }
+                ToolbarItemGroup(placement: .topBarLeading) {
+                    Button {
+                        showingSettingsSheet.toggle()
+                    } label: {
+                        Label("Settings", systemImage: "gearshape")
+                    }
+                    .sheet(isPresented: $showingSettingsSheet) {
+                        SettingsView()
                     }
                 }
             }

@@ -8,44 +8,66 @@
 import Foundation
 import AVFoundation
 
-class ProgramRunner: NSObject, AVSpeechSynthesizerDelegate {
-    
+final class ProgramRunner: NSObject, ObservableObject, AVSpeechSynthesizerDelegate {
+
     enum SpeakFinishedAction {
         case none
         case runExercise
     }
 
-    private static let instance = ProgramRunner()
+    @Published var durationLeft: Int = 0
+    @Published var currentExerciseName: String = ""
+
+    // TODO: Add persistence for selectedVoice.
+    @Published var selectedVoice = Voice(speechVoice: AVSpeechSynthesisVoice.speechVoices().first ?? AVSpeechSynthesisVoice())
 
     var currentProgram: Program?
     var currentExerciseIndex: Int = 0
     var currentSpeakFinishedAction: SpeakFinishedAction = .none
     var timer: Timer?
-    var durationLeft = 0
     var durationRest = 0
 
     var utterance: AVSpeechUtterance?
     let synthesizer = AVSpeechSynthesizer()
 
-    static func run(program: Program, shuffle: Bool = false) {
-        instance.currentProgram = program
+    func run(program: Program, shuffle: Bool = false) {
+        currentProgram = program
         if shuffle {
-            instance.currentProgram?.exercises.shuffle()
+            currentProgram?.exercises.shuffle()
         }
-        instance.startExercise()
+        startExercise()
     }
 
-    static func stop() {
-        instance.stopProgram()
+    func stop() {
+        stopProgram()
+    }
+
+    func preview(text: String, voice: AVSpeechSynthesisVoice? = nil) {
+        speak(text: text, voice: voice)
     }
 
     private func stopProgram() {
         timer?.invalidate()
         timer = nil
 
+        synthesizer.stopSpeaking(at: .immediate)
         durationLeft = 0
         currentExerciseIndex = 0
+        currentExerciseName = ""
         currentProgram = nil
+    }
+
+    private func speak(text: String, voice: AVSpeechSynthesisVoice? = nil) {
+        // TODO: Add more speech options.
+        utterance = AVSpeechUtterance(string: text)
+        utterance?.voice = voice ?? selectedVoice.speechVoice
+        utterance?.rate = 0.3
+        utterance?.pitchMultiplier = 0.3
+
+        if let utterance = utterance {
+            synthesizer.delegate = self
+            synthesizer.speak(utterance)
+        }
     }
 
     func startExercise() {
@@ -56,7 +78,9 @@ class ProgramRunner: NSObject, AVSpeechSynthesizerDelegate {
         if let exerciseCount = currentProgram?.exercises.count,
            currentExerciseIndex < exerciseCount,
            let currentExercise = currentProgram?.exercises[currentExerciseIndex] {
-            speak(text: "\(currentExercise.name) \(currentExercise.duration) seconds. Ready... Start")
+            let text = "\(currentExercise.name) \(currentExercise.duration) seconds. Ready... Start"
+            speak(text: text)
+            currentExerciseName = currentExercise.name
             currentSpeakFinishedAction = .runExercise
         } else {
             speak(text: "program finished")
@@ -99,29 +123,13 @@ class ProgramRunner: NSObject, AVSpeechSynthesizerDelegate {
         }
     }
 
-    private func speak(text: String) {
-        // TODO: Add more speech options.
-        utterance = AVSpeechUtterance(string: text)
-        utterance?.voice = AVSpeechSynthesisVoice(language: "en-GB")
-        utterance?.rate = 0.3
-
-        if let utterance = utterance {
-            synthesizer.delegate = self
-            synthesizer.speak(utterance)
-        }
-    }
-
     func speechSynthesizer(_ synthesizer: AVSpeechSynthesizer, didFinish utterance: AVSpeechUtterance) {
-        print("speechSynthesizer didFinish")
-       
         switch currentSpeakFinishedAction {
         case .none:
             break
         case .runExercise:
             runExercise()
         }
-
         currentSpeakFinishedAction = .none
     }
-
 }

@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import AVFoundation
 
 final class ModelData: ObservableObject {
 
@@ -17,6 +18,17 @@ final class ModelData: ObservableObject {
                                                     [Exercise(name: "mock exercise 4", duration: 30),
                                                      Exercise(name: "mock exercise 5", duration: 15),
                                                      Exercise(name: "mock exercise 6", duration: 15)])]
+
+    var selectedVoiceIndex: Int = 0
+    var previewText: String = "testing"
+
+    var voices: [Voice] = {
+        var voicesArray: [Voice] = []
+        for speechVoice in AVSpeechSynthesisVoice.speechVoices() {
+            voicesArray.append(Voice(speechVoice: speechVoice))
+        }
+        return voicesArray
+    }()
 
     func storeData() {
         let jsonEncoder = JSONEncoder()
@@ -37,6 +49,7 @@ final class ModelData: ObservableObject {
     }
 
     func loadData() {
+
         let defaults = UserDefaults.standard
 
         if let jsonString: String = defaults.object(forKey: "programs") as? String {
