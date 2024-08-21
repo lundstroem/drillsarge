@@ -9,8 +9,8 @@ import SwiftUI
 
 struct SettingsView: View {
 
-    @EnvironmentObject var modelData: ModelData
-    @EnvironmentObject var programRunner: ProgramRunner
+    @Bindable var modelData: ModelData
+    @Bindable var programRunner: ProgramRunner
 
     var body: some View {
         Form {
@@ -36,5 +36,6 @@ struct SettingsView: View {
 }
 
 #Preview {
-    SettingsView()
+    SettingsView(modelData: ModelData(), programRunner: ProgramRunner())
 }
+

@@ -8,13 +8,15 @@
 import SwiftUI
 
 struct ContentView: View {
-    @EnvironmentObject var modelData: ModelData
+    @Environment(ModelData.self) private var modelData
 
     var body: some View {
         ProgramList()
     }
 }
 
+
 #Preview {
-    ContentView().environmentObject(ModelData())
+    ContentView()
 }
+

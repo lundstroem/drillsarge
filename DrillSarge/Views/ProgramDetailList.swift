@@ -11,8 +11,8 @@ struct ProgramDetailList: View {
 
     @State private var isRunningProgram = false
     
-    @EnvironmentObject var modelData: ModelData
-    @EnvironmentObject var programRunner: ProgramRunner
+    @Environment(ModelData.self) private var modelData
+    @Environment(ProgramRunner.self) private var programRunner
 
     var program: Program
     var programIndex: Int {
@@ -106,10 +106,12 @@ struct ProgramDetailList: View {
     }
 }
 
+
 struct ProgramDetail_Previews: PreviewProvider {
     static let modelData = ModelData()
 
     static var previews: some View {
-        ProgramDetailList(program: modelData.programs[0]).environmentObject(modelData)
+        ProgramDetailList(program: modelData.programs[0])
     }
 }
+

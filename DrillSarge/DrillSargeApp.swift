@@ -16,12 +16,12 @@ struct DrillSargeApp: App {
      - Cancel edit of program to not store changes
 
      */
-    @StateObject private var modelData = ModelData()
-    @StateObject private var programRunner = ProgramRunner()
+    @State private var modelData = ModelData()
+    @State private var programRunner = ProgramRunner()
 
     var body: some Scene {
         WindowGroup {
-            ContentView().environmentObject(modelData).environmentObject(programRunner)
+            ContentView().environment(modelData).environment(programRunner)
         }
     }
 }

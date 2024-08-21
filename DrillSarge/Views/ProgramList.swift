@@ -9,7 +9,9 @@ import SwiftUI
 
 struct ProgramList: View {
     @Environment(\.scenePhase) var scenePhase
-    @EnvironmentObject var modelData: ModelData
+    @Environment(ModelData.self) private var modelData
+    @Environment(ProgramRunner.self) private var programRunner
+
     @State private var showingSettingsSheet = false
 
     private func delete(at offsets: IndexSet) {
@@ -33,23 +35,7 @@ struct ProgramList: View {
                 }.onDelete(perform: delete)
             }
             .toolbar {
-                ToolbarItemGroup(placement: .topBarTrailing) {
-                    Button {
-                        modelData.programs.append(Program(name: "New program"))
-                    } label: {
-                        Label("Add row", systemImage: "plus")
-                    }
-                }
-                ToolbarItemGroup(placement: .topBarLeading) {
-                    Button {
-                        showingSettingsSheet.toggle()
-                    } label: {
-                        Label("Settings", systemImage: "gearshape")
-                    }
-                    .sheet(isPresented: $showingSettingsSheet) {
-                        SettingsView()
-                    }
-                }
+                makeToolbarContent()
             }
         }.onAppear {
             // Load data if available
@@ -60,8 +46,31 @@ struct ProgramList: View {
             }
         }
     }
+
+    @ToolbarContentBuilder
+    private func makeToolbarContent() -> some ToolbarContent {
+        ToolbarItemGroup(placement: .topBarTrailing) {
+            Button {
+                modelData.programs.append(Program(name: "New program"))
+            } label: {
+                Label("Add row", systemImage: "plus")
+            }
+        }
+        ToolbarItemGroup(placement: .topBarLeading) {
+            Button {
+                showingSettingsSheet.toggle()
+            } label: {
+                Label("Settings", systemImage: "gearshape")
+            }
+            .sheet(isPresented: $showingSettingsSheet) {
+                SettingsView(modelData: modelData, programRunner: programRunner)
+            }
+        }
+    }
 }
 
+
 #Preview {
-    ProgramList().environmentObject(ModelData())
+    ProgramList()
 }
+

@@ -8,18 +8,18 @@
 import Foundation
 import AVFoundation
 
-final class ProgramRunner: NSObject, ObservableObject, AVSpeechSynthesizerDelegate {
+@Observable final class ProgramRunner: NSObject, AVSpeechSynthesizerDelegate {
 
     enum SpeakFinishedAction {
         case none
         case runExercise
     }
 
-    @Published var durationLeft: Int = 0
-    @Published var currentExerciseName: String = ""
+    var durationLeft: Int = 0
+    var currentExerciseName: String = ""
 
     // TODO: Add persistence for selectedVoice.
-    @Published var selectedVoice = Voice(speechVoice: AVSpeechSynthesisVoice.speechVoices().first ?? AVSpeechSynthesisVoice())
+    var selectedVoice = Voice(speechVoice: AVSpeechSynthesisVoice.speechVoices().first ?? AVSpeechSynthesisVoice())
 
     var currentProgram: Program?
     var currentExerciseIndex: Int = 0
@@ -55,6 +55,8 @@ final class ProgramRunner: NSObject, ObservableObject, AVSpeechSynthesizerDelega
         currentExerciseIndex = 0
         currentExerciseName = ""
         currentProgram = nil
+
+        currentSpeakFinishedAction = .none
     }
 
     private func speak(text: String, voice: AVSpeechSynthesisVoice? = nil) {
