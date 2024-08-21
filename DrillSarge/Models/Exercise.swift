@@ -9,7 +9,7 @@ import Foundation
 
 struct Exercise: Hashable, Identifiable, Codable {
 
-    static var `default` = Exercise(name: "name", duration: 15)
+    static let `default` = Exercise(name: "name", duration: 15)
 
     var id = UUID()
     var name: String
