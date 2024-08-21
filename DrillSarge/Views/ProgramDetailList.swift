@@ -25,6 +25,10 @@ struct ProgramDetailList: View {
         modelData.programs[programIndex].exercises.firstIndex(where: { $0.id == exercise.id })!
     }
 
+    private func delete(at offsets: IndexSet) {
+        modelData.programs[programIndex].exercises.remove(atOffsets: offsets)
+    }
+
     var body: some View {
         NavigationStack {
             ZStack {
@@ -54,7 +58,7 @@ struct ProgramDetailList: View {
                         }
                     }.onMove { from, to in
                         modelData.programs[programIndex].exercises.move(fromOffsets: from, toOffset: to)
-                    }
+                    }.onDelete(perform: delete)
                 }.toolbar {
                     ToolbarItemGroup(placement: .bottomBar) {
                         Button {
@@ -75,12 +79,6 @@ struct ProgramDetailList: View {
                             programRunner.run(program: program, shuffle: true)
                         } label: {
                             Label("shuffle", systemImage: "shuffle")
-                        }
-                        Spacer()
-                        Button {
-                            // TODO: Show dialog and delete
-                        } label: {
-                            Label("delete", systemImage: "trash")
                         }
                     }
 

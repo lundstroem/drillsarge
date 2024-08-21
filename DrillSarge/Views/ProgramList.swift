@@ -8,8 +8,13 @@
 import SwiftUI
 
 struct ProgramList: View {
+    @Environment(\.scenePhase) var scenePhase
     @EnvironmentObject var modelData: ModelData
     @State private var showingSettingsSheet = false
+
+    private func delete(at offsets: IndexSet) {
+        modelData.programs.remove(atOffsets: offsets)
+    }
 
     var body: some View {
         NavigationStack {
@@ -25,7 +30,7 @@ struct ProgramList: View {
                     }
                 }.onMove { from, to in
                     modelData.programs.move(fromOffsets: from, toOffset: to)
-                }
+                }.onDelete(perform: delete)
             }
             .toolbar {
                 ToolbarItemGroup(placement: .topBarTrailing) {
@@ -49,6 +54,10 @@ struct ProgramList: View {
         }.onAppear {
             // Load data if available
             modelData.loadData()
+        }.onChange(of: scenePhase) {
+            if scenePhase == .inactive || scenePhase == .background {
+                modelData.storeData()
+            }
         }
     }
 }
