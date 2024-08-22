@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		4C06F46D2AEE7BC6001EB5DA /* Voice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C06F46C2AEE7BC6001EB5DA /* Voice.swift */; };
 		4CE53ADA2AEEA7F6003AEB8B /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CE53AD92AEEA7F6003AEB8B /* SettingsView.swift */; };
+		CE5F69B42C772CB200610988 /* ExerciseListItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5F69B32C772CB200610988 /* ExerciseListItemView.swift */; };
 		CEB9DAA92AD177BB00F1F81E /* ExerciseDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB9DAA82AD177BB00F1F81E /* ExerciseDetail.swift */; };
 		CEB9DAAD2AD1B21900F1F81E /* ProgramRunner.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB9DAAC2AD1B21900F1F81E /* ProgramRunner.swift */; };
 		CEFFEADF2AD02E0800466F80 /* DrillSargeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFFEADE2AD02E0800466F80 /* DrillSargeApp.swift */; };
@@ -45,6 +46,7 @@
 /* Begin PBXFileReference section */
 		4C06F46C2AEE7BC6001EB5DA /* Voice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Voice.swift; sourceTree = "<group>"; };
 		4CE53AD92AEEA7F6003AEB8B /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		CE5F69B32C772CB200610988 /* ExerciseListItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseListItemView.swift; sourceTree = "<group>"; };
 		CEB9DAA82AD177BB00F1F81E /* ExerciseDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseDetail.swift; sourceTree = "<group>"; };
 		CEB9DAAC2AD1B21900F1F81E /* ProgramRunner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgramRunner.swift; sourceTree = "<group>"; };
 		CEFFEADB2AD02E0800466F80 /* DrillSarge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DrillSarge.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -164,6 +166,7 @@
 				CEFFEAE02AD02E0800466F80 /* ContentView.swift */,
 				CEFFEB0E2AD03A0E00466F80 /* ProgramList.swift */,
 				CEFFEB102AD03A7F00466F80 /* ProgramDetailList.swift */,
+				CE5F69B32C772CB200610988 /* ExerciseListItemView.swift */,
 				CEB9DAA82AD177BB00F1F81E /* ExerciseDetail.swift */,
 				4CE53AD92AEEA7F6003AEB8B /* SettingsView.swift */,
 			);
@@ -303,6 +306,7 @@
 				CEB9DAAD2AD1B21900F1F81E /* ProgramRunner.swift in Sources */,
 				CEFFEB0B2AD02EFD00466F80 /* Program.swift in Sources */,
 				CEFFEAE12AD02E0800466F80 /* ContentView.swift in Sources */,
+				CE5F69B42C772CB200610988 /* ExerciseListItemView.swift in Sources */,
 				CEB9DAA92AD177BB00F1F81E /* ExerciseDetail.swift in Sources */,
 				CEFFEADF2AD02E0800466F80 /* DrillSargeApp.swift in Sources */,
 				CEFFEB0F2AD03A0E00466F80 /* ProgramList.swift in Sources */,

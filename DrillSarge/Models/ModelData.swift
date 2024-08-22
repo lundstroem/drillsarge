@@ -48,6 +48,16 @@ import AVFoundation
         }
     }
 
+    func storeExercise(exercise: Exercise) {
+        for (programIndex, program) in programs.enumerated() {
+            for (exerciseIndex, storedExercise) in program.exercises.enumerated() {
+                if (storedExercise.id == exercise.id) {
+                    programs[programIndex].exercises[exerciseIndex] = exercise
+                }
+            }
+        }
+    }
+
     func loadData() {
 
         let defaults = UserDefaults.standard

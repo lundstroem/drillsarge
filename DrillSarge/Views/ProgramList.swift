@@ -69,7 +69,6 @@ struct ProgramList: View {
     }
 }
 
-
 #Preview {
     ProgramList()
 }

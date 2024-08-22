@@ -9,10 +9,11 @@ import SwiftUI
 
 struct ProgramDetailList: View {
 
-    @State private var isRunningProgram = false
-    
     @Environment(ModelData.self) private var modelData
     @Environment(ProgramRunner.self) private var programRunner
+
+    @State private var isRunningProgram = false
+    @State private var isDetailPresented = false
 
     var program: Program
     var programIndex: Int {
@@ -20,6 +21,7 @@ struct ProgramDetailList: View {
     }
 
     @State private var defaultExercise = Exercise.default
+    @State private var selectedExercise = Exercise.default
 
     private func exerciseIndex(exercise: Exercise) -> Int {
         modelData.programs[programIndex].exercises.firstIndex(where: { $0.id == exercise.id })!
@@ -30,65 +32,25 @@ struct ProgramDetailList: View {
     }
 
     var body: some View {
+
+        // Create binding to modelData so we can send in bindings to exercises
+        // to ExerciseListItemView.
+        @Bindable var modelDataBinding: ModelData = modelData
+
         NavigationStack {
             ZStack {
                 List {
-                    ForEach(modelData.programs[programIndex].exercises) { exercise in
-                        NavigationLink {
-                            // Send in a binding to defaultExercise so
-                            // ExerciseDetail gets read and write access
-                            // to it
-                            ExerciseDetail(exercise: $defaultExercise).onAppear {
-                                // Update defaultExercise with the exercise
-                                // from list
-
-                                defaultExercise = exercise
-                            }.onDisappear {
-                                // Check if defaultExercise has been edited
-                                // and differs from the one in modelData. If
-                                // so, store the edited version in modelData
-                                // and write to persistent storage
-                                if modelData.programs[programIndex].exercises[exerciseIndex(exercise: exercise)] != defaultExercise {
-                                    modelData.programs[programIndex].exercises[exerciseIndex(exercise: exercise)] = defaultExercise
-                                    modelData.storeData()
-                                }
-                            }
-                        } label: {
-                            Text(exercise.name)
-                        }
+                    ForEach($modelDataBinding.programs[programIndex].exercises) { exercise in
+                        ExerciseListItemView(exercise: exercise,
+                                             selectedExercise: $selectedExercise,
+                                             isDetailPresented: $isDetailPresented)
                     }.onMove { from, to in
                         modelData.programs[programIndex].exercises.move(fromOffsets: from, toOffset: to)
                     }.onDelete(perform: delete)
-                }.toolbar {
-                    ToolbarItemGroup(placement: .bottomBar) {
-                        Button {
-                            programRunner.run(program: program)
-                            isRunningProgram = true
-                        } label: {
-                            Label("play", systemImage: "play")
-                        }
-                        Spacer()
-                        Button {
-                            programRunner.stop()
-                            isRunningProgram = false
-                        } label: {
-                            Label("stop", systemImage: "stop")
-                        }
-                        Spacer()
-                        Button {
-                            programRunner.run(program: program, shuffle: true)
-                        } label: {
-                            Label("shuffle", systemImage: "shuffle")
-                        }
-                    }
-
-                    ToolbarItemGroup(placement: .topBarTrailing) {
-                        Button {
-                            modelData.programs[programIndex].exercises.append(Exercise(name: "new exercise", duration: 15))
-                        } label: {
-                            Label("Add row", systemImage: "plus")
-                        }
-                    }
+                }.sheet(isPresented: $isDetailPresented, content: {
+                    ExerciseDetail(exercise: $selectedExercise, isDetailPresented: $isDetailPresented)
+                }).toolbar {
+                    makeToolbarContent()
                 }
                 VStack {
                     Text("Running").font(.largeTitle).padding(EdgeInsets(top: 10, leading: 10, bottom: 0, trailing: 10))
@@ -104,8 +66,40 @@ struct ProgramDetailList: View {
             }
         }.navigationTitle(modelData.programs[programIndex].name)
     }
-}
 
+    @ToolbarContentBuilder
+    private func makeToolbarContent() -> some ToolbarContent {
+        ToolbarItemGroup(placement: .bottomBar) {
+            Button {
+                programRunner.run(program: program)
+                isRunningProgram = true
+            } label: {
+                Label("play", systemImage: "play")
+            }
+            Spacer()
+            Button {
+                programRunner.stop()
+                isRunningProgram = false
+            } label: {
+                Label("stop", systemImage: "stop")
+            }
+            Spacer()
+            Button {
+                programRunner.run(program: program, shuffle: true)
+            } label: {
+                Label("shuffle", systemImage: "shuffle")
+            }
+        }
+
+        ToolbarItemGroup(placement: .topBarTrailing) {
+            Button {
+                modelData.programs[programIndex].exercises.append(Exercise(name: "new exercise", duration: 15))
+            } label: {
+                Label("Add row", systemImage: "plus")
+            }
+        }
+    }
+}
 
 struct ProgramDetail_Previews: PreviewProvider {
     static let modelData = ModelData()
