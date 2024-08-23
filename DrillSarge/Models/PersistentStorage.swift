@@ -9,7 +9,7 @@ import Foundation
 
 struct PersistentStorage: Hashable, Identifiable, Codable {
     var id = UUID()
-    var voiceName: String = ""
+    var voiceName: String?
     var programs: [Program] = [Program(name: "mock program 1", exercises:
                                         [Exercise(name: "mock exercise 1", duration: 30),
                                          Exercise(name: "mock exercise 2", duration: 15),

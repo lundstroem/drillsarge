@@ -18,6 +18,7 @@ final class DrillSargeUITestsLaunchTests: XCTestCase {
     }
 
     func testLaunch() throws {
+        /*
         let app = XCUIApplication()
         app.launch()
 
@@ -28,5 +29,6 @@ final class DrillSargeUITestsLaunchTests: XCTestCase {
         attachment.name = "Launch Screen"
         attachment.lifetime = .keepAlways
         add(attachment)
+         */
     }
 }

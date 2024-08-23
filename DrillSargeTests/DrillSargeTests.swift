@@ -28,9 +28,64 @@ final class DrillSargeTests: XCTestCase {
 
     func testPerformanceExample() throws {
         // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
+        // .measure {
+        // Put the code you want to measure the time of here.
+        // }
     }
 
+    func testParseFromPersistentStorage() {
+
+        let json = "{\"programs\":[{\"exercises\":[{\"name\":\"mock exercise 1\",\"duration\":30},{\"duration\":15,\"name\":\"mock exercise 2\"},{\"duration\":15,\"name\":\"mock exercise 3\"}],\"name\":\"mock program 1\"},{\"name\":\"mock program 2\",\"exercises\":[{\"name\":\"mock exercise 4\",\"duration\":30},{\"name\":\"mock exercise 5\",\"duration\":15},{\"duration\":15,\"name\":\"mock exercise 6\"}]}],\"voiceName\":\"\"}"
+
+        guard let data = json.data(using: .utf8) else {
+            XCTFail()
+            return
+        }
+
+        let persistentStorage: PersistentStorage = try! JSONDecoder().decode(PersistentStorage.self, from: data)
+        
+        XCTAssertNotNil(persistentStorage)
+    }
+
+    func testParseFromPersistentStorageMissingVoiceName() {
+
+        let json = "{\"programs\":[{\"exercises\":[{\"name\":\"mock exercise 1\",\"duration\":30},{\"duration\":15,\"name\":\"mock exercise 2\"},{\"duration\":15,\"name\":\"mock exercise 3\"}],\"name\":\"mock program 1\"},{\"name\":\"mock program 2\",\"exercises\":[{\"name\":\"mock exercise 4\",\"duration\":30},{\"name\":\"mock exercise 5\",\"duration\":15},{\"duration\":15,\"name\":\"mock exercise 6\"}]}]}"
+
+        guard let data = json.data(using: .utf8) else {
+            XCTFail()
+            return
+        }
+
+        let persistentStorage: PersistentStorage = try! JSONDecoder().decode(PersistentStorage.self, from: data)
+
+        XCTAssertNotNil(persistentStorage)
+    }
+
+    func testParseFromPersistentStorageMissingExercises() {
+
+        let json = "{\"programs\":[{\"exercises\":[],\"name\":\"mock program 1\"},{\"name\":\"mock program 2\",\"exercises\":[{\"name\":\"mock exercise 4\",\"duration\":30},{\"name\":\"mock exercise 5\",\"duration\":15},{\"duration\":15,\"name\":\"mock exercise 6\"}]}]}"
+
+        guard let data = json.data(using: .utf8) else {
+            XCTFail()
+            return
+        }
+
+        let persistentStorage: PersistentStorage = try! JSONDecoder().decode(PersistentStorage.self, from: data)
+
+        XCTAssertNotNil(persistentStorage)
+    }
+
+    func testParseFromPersistentStorageMissingPrograms() {
+
+        let json = "{\"programs\":[]}"
+
+        guard let data = json.data(using: .utf8) else {
+            XCTFail()
+            return
+        }
+
+        let persistentStorage: PersistentStorage = try! JSONDecoder().decode(PersistentStorage.self, from: data)
+
+        XCTAssertNotNil(persistentStorage)
+    }
 }

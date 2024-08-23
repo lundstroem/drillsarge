@@ -54,10 +54,6 @@ import AVFoundation
 
     func loadData() {
 
-        // TODO: Add unit tests for save and load.
-        // - Can it handle migrating from an old structure to a new? (With new fields not existing in the json data).
-        // backwards compat check.
-
         let defaults = UserDefaults.standard
 
         if let jsonString: String = defaults.object(forKey: persistentStorageKey) as? String {
