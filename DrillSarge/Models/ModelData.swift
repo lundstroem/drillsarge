@@ -10,16 +10,10 @@ import AVFoundation
 
 @Observable final class ModelData {
 
-    var programs: [Program] = [Program(name: "mock program 1", exercises:
-                                        [Exercise(name: "mock exercise 1", duration: 30),
-                                         Exercise(name: "mock exercise 2", duration: 15),
-                                         Exercise(name: "mock exercise 3", duration: 15)]),
-                               Program(name: "mock program 2", exercises:
-                                        [Exercise(name: "mock exercise 4", duration: 30),
-                                         Exercise(name: "mock exercise 5", duration: 15),
-                                         Exercise(name: "mock exercise 6", duration: 15)])]
+    var programRunner: ProgramRunner = ProgramRunner()
+    let persistentStorageKey: String = "persistentStorageKey"
+    var persistentStorage: PersistentStorage = PersistentStorage()
 
-    var selectedVoiceIndex: Int = 0
     var previewText: String = "testing"
 
     var voices: [Voice] = {
@@ -30,43 +24,54 @@ import AVFoundation
         return voicesArray
     }()
 
-    func storeData() {
-        let jsonEncoder = JSONEncoder()
-        var jsonData: Data?
-        do {
-            jsonData = try jsonEncoder.encode(programs)
-        } catch {
-            print("Unexpected error: \(error).")
-        }
-        
-        if let jsonData = jsonData {
-            let jsonString = String(data: jsonData, encoding: .utf8)
-            print("jsonString:\(jsonString ?? "")")
-
-            let defaults = UserDefaults.standard
-            defaults.set(jsonString, forKey: "programs")
-        }
-    }
-
-    func storeExercise(exercise: Exercise) {
-        for (programIndex, program) in programs.enumerated() {
+    func updateExercise(exercise: Exercise) {
+        for (programIndex, program) in persistentStorage.programs.enumerated() {
             for (exerciseIndex, storedExercise) in program.exercises.enumerated() {
                 if (storedExercise.id == exercise.id) {
-                    programs[programIndex].exercises[exerciseIndex] = exercise
+                    persistentStorage.programs[programIndex].exercises[exerciseIndex] = exercise
                 }
             }
         }
     }
 
+    func storeData() {
+        let jsonEncoder = JSONEncoder()
+        var jsonData: Data?
+        do {
+            jsonData = try jsonEncoder.encode(persistentStorage)
+        } catch {
+            print("Unexpected error: \(error).")
+        }
+
+        if let jsonData = jsonData {
+            let jsonString = String(data: jsonData, encoding: .utf8)
+            print("jsonString:\(jsonString ?? "")")
+
+            let defaults = UserDefaults.standard
+            defaults.set(jsonString, forKey: persistentStorageKey)
+        }
+    }
+
     func loadData() {
+
+        // TODO: Add unit tests for save and load.
+        // - Can it handle migrating from an old structure to a new? (With new fields not existing in the json data).
+        // backwards compat check.
 
         let defaults = UserDefaults.standard
 
-        if let jsonString: String = defaults.object(forKey: "programs") as? String {
+        if let jsonString: String = defaults.object(forKey: persistentStorageKey) as? String {
             if let data = jsonString.data(using: .utf8) {
-                let loadedPrograms: [Program] = try! JSONDecoder().decode([Program].self, from: data)
-                print("loadedPrograms: \(loadedPrograms.count)")
-                programs = loadedPrograms
+                let persistentStorage: PersistentStorage = try! JSONDecoder().decode(PersistentStorage.self, from: data)
+                print("loadedPrograms: \(persistentStorage.programs.count)")
+                self.persistentStorage = persistentStorage
+
+                // update voiceName from storage
+                for voice in voices {
+                    if voice.speechVoice.name == persistentStorage.voiceName {
+                        programRunner.selectedVoice = voice
+                    }
+                }
             }
         }
     }

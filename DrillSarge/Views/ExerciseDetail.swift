@@ -44,7 +44,7 @@ struct ExerciseDetail: View {
 
                 ToolbarItemGroup(placement: .topBarTrailing) {
                     Button("Save") {
-                        modelData.storeExercise(exercise: exercise)
+                        modelData.updateExercise(exercise: exercise)
                         isDetailPresented = false
                     }
                 }

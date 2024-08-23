@@ -10,6 +10,7 @@
 		4C06F46D2AEE7BC6001EB5DA /* Voice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C06F46C2AEE7BC6001EB5DA /* Voice.swift */; };
 		4CE53ADA2AEEA7F6003AEB8B /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CE53AD92AEEA7F6003AEB8B /* SettingsView.swift */; };
 		CE5F69B42C772CB200610988 /* ExerciseListItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5F69B32C772CB200610988 /* ExerciseListItemView.swift */; };
+		CE9B13302C78923E00700501 /* PersistentStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9B132F2C78923E00700501 /* PersistentStorage.swift */; };
 		CEB9DAA92AD177BB00F1F81E /* ExerciseDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB9DAA82AD177BB00F1F81E /* ExerciseDetail.swift */; };
 		CEB9DAAD2AD1B21900F1F81E /* ProgramRunner.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB9DAAC2AD1B21900F1F81E /* ProgramRunner.swift */; };
 		CEFFEADF2AD02E0800466F80 /* DrillSargeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFFEADE2AD02E0800466F80 /* DrillSargeApp.swift */; };
@@ -47,6 +48,7 @@
 		4C06F46C2AEE7BC6001EB5DA /* Voice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Voice.swift; sourceTree = "<group>"; };
 		4CE53AD92AEEA7F6003AEB8B /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		CE5F69B32C772CB200610988 /* ExerciseListItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseListItemView.swift; sourceTree = "<group>"; };
+		CE9B132F2C78923E00700501 /* PersistentStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistentStorage.swift; sourceTree = "<group>"; };
 		CEB9DAA82AD177BB00F1F81E /* ExerciseDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseDetail.swift; sourceTree = "<group>"; };
 		CEB9DAAC2AD1B21900F1F81E /* ProgramRunner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgramRunner.swift; sourceTree = "<group>"; };
 		CEFFEADB2AD02E0800466F80 /* DrillSarge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DrillSarge.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -153,6 +155,7 @@
 			isa = PBXGroup;
 			children = (
 				CEFFEB082AD02EA200466F80 /* ModelData.swift */,
+				CE9B132F2C78923E00700501 /* PersistentStorage.swift */,
 				CEFFEB0A2AD02EFD00466F80 /* Program.swift */,
 				CEFFEB122AD03A9800466F80 /* Exercise.swift */,
 				4C06F46C2AEE7BC6001EB5DA /* Voice.swift */,
@@ -315,6 +318,7 @@
 				4C06F46D2AEE7BC6001EB5DA /* Voice.swift in Sources */,
 				CEFFEB112AD03A7F00466F80 /* ProgramDetailList.swift in Sources */,
 				4CE53ADA2AEEA7F6003AEB8B /* SettingsView.swift in Sources */,
+				CE9B13302C78923E00700501 /* PersistentStorage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

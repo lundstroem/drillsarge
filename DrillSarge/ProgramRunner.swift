@@ -18,7 +18,6 @@ import AVFoundation
     var durationLeft: Int = 0
     var currentExerciseName: String = ""
 
-    // TODO: Add persistence for selectedVoice.
     var selectedVoice = Voice(speechVoice: AVSpeechSynthesisVoice.speechVoices().first ?? AVSpeechSynthesisVoice())
 
     var currentProgram: Program?

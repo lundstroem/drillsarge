@@ -10,12 +10,11 @@ import SwiftUI
 struct ProgramList: View {
     @Environment(\.scenePhase) var scenePhase
     @Environment(ModelData.self) private var modelData
-    @Environment(ProgramRunner.self) private var programRunner
 
     @State private var showingSettingsSheet = false
 
     private func delete(at offsets: IndexSet) {
-        modelData.programs.remove(atOffsets: offsets)
+        modelData.persistentStorage.programs.remove(atOffsets: offsets)
     }
 
     var body: some View {
@@ -24,14 +23,14 @@ struct ProgramList: View {
                 .bold()
                 .font(.title)
             List {
-                ForEach(modelData.programs) { program in
+                ForEach(modelData.persistentStorage.programs) { program in
                     NavigationLink {
                         ProgramDetailList(program: program)
                     } label: {
                         Text(program.name)
                     }
                 }.onMove { from, to in
-                    modelData.programs.move(fromOffsets: from, toOffset: to)
+                    modelData.persistentStorage.programs.move(fromOffsets: from, toOffset: to)
                 }.onDelete(perform: delete)
             }
             .toolbar {
@@ -51,7 +50,7 @@ struct ProgramList: View {
     private func makeToolbarContent() -> some ToolbarContent {
         ToolbarItemGroup(placement: .topBarTrailing) {
             Button {
-                modelData.programs.append(Program(name: "New program"))
+                modelData.persistentStorage.programs.append(Program(name: "New program"))
             } label: {
                 Label("Add row", systemImage: "plus")
             }
@@ -63,7 +62,7 @@ struct ProgramList: View {
                 Label("Settings", systemImage: "gearshape")
             }
             .sheet(isPresented: $showingSettingsSheet) {
-                SettingsView(modelData: modelData, programRunner: programRunner)
+                SettingsView(modelData: modelData)
             }
         }
     }

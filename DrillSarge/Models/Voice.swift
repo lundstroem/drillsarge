@@ -11,4 +11,8 @@ import AVFoundation
 struct Voice: Identifiable, Hashable {
     var id = UUID()
     var speechVoice: AVSpeechSynthesisVoice
+
+    enum CodingKeys: String, CodingKey {
+        case speechVoice = "speechVoice"
+    }
 }

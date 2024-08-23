@@ -10,7 +10,6 @@ import SwiftUI
 struct SettingsView: View {
 
     @Bindable var modelData: ModelData
-    @Bindable var programRunner: ProgramRunner
 
     var body: some View {
         Form {
@@ -19,14 +18,17 @@ struct SettingsView: View {
                     modelData.previewText,
                     text: $modelData.previewText
                 ).textFieldStyle(.plain)
-                Picker("voice", selection: $programRunner.selectedVoice) {
+                Picker("voice", selection: $modelData.programRunner.selectedVoice) {
                     ForEach(modelData.voices) { voice in
                         let string = "\(voice.speechVoice.name) \(voice.speechVoice.language)"
                         Text(string).tag(voice)
                     }
+                }.onChange(of: modelData.programRunner.selectedVoice) { oldState, newState in
+                    modelData.persistentStorage.voiceName = newState.speechVoice.name
                 }
+
                 Button {
-                    programRunner.preview(text: modelData.previewText, voice: programRunner.selectedVoice.speechVoice)
+                    modelData.programRunner.preview(text: modelData.previewText, voice: modelData.programRunner.selectedVoice.speechVoice)
                 } label: {
                     Label("preview", systemImage: "play")
                 }
@@ -36,6 +38,6 @@ struct SettingsView: View {
 }
 
 #Preview {
-    SettingsView(modelData: ModelData(), programRunner: ProgramRunner())
+    SettingsView(modelData: ModelData())
 }
 

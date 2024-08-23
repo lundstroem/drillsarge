@@ -14,4 +14,9 @@ struct Exercise: Hashable, Identifiable, Codable {
     var id = UUID()
     var name: String
     var duration: Int
+
+    enum CodingKeys: String, CodingKey {
+        case name = "name"
+        case duration = "duration"
+    }
 }
