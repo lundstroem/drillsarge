@@ -1,9 +1,28 @@
-//
-//  ProgramDetailList.swift
-//  DrillSarge
-//
-//  Created by user on 2023-10-06.
-//
+/*
+
+ MIT License
+
+ Copyright (c) 2024 Harry Lundström
+
+ Permission is hereby granted, free of charge, to any person obtaining a copy
+ of this software and associated documentation files (the "Software"), to deal
+ in the Software without restriction, including without limitation the rights
+ to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ copies of the Software, and to permit persons to whom the Software is
+ furnished to do so, subject to the following conditions:
+
+ The above copyright notice and this permission notice shall be included in all
+ copies or substantial portions of the Software.
+
+ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+ SOFTWARE.
+
+ */
 
 import SwiftUI
 
@@ -11,11 +30,10 @@ struct ProgramDetailList: View {
 
     @Environment(ModelData.self) private var modelData
 
-    @State private var isRunningProgram = false
     @State private var isDetailPresented = false
 
     var program: Program
-    var programIndex: Int {
+    private var programIndex: Int {
         modelData.persistentStorage.programs.firstIndex(where: { $0.id == program.id })!
     }
 
@@ -52,16 +70,15 @@ struct ProgramDetailList: View {
                     makeToolbarContent()
                 }
                 VStack {
-                    Text("Running").font(.largeTitle).padding(EdgeInsets(top: 10, leading: 10, bottom: 0, trailing: 10))
                     Text("\(modelData.programRunner.currentExerciseName)").font(.largeTitle).padding(EdgeInsets(top: 0, leading: 10, bottom: 0, trailing: 10))
-                    if modelData.programRunner.durationLeft > 0 {
-                        Text("\(modelData.programRunner.durationLeft)").font(.largeTitle).padding(EdgeInsets(top: 0, leading: 10, bottom: 10, trailing: 10))
+                    if modelData.programRunner.durationLeftSeconds > 0 {
+                        Text("\(modelData.programRunner.durationLeftSeconds)").font(.largeTitle).padding(EdgeInsets(top: 0, leading: 10, bottom: 10, trailing: 10))
                     } else {
                         Text("-").font(.largeTitle).padding(EdgeInsets(top: 0, leading: 10, bottom: 10, trailing: 10))
                     }
                 }.background(.green)
                     .cornerRadius(15)
-                    .opacity(isRunningProgram ? 1 : 0)
+                    .opacity(modelData.programRunner.isRunningProgram ? 1 : 0)
             }
         }.navigationTitle(modelData.persistentStorage.programs[programIndex].name)
     }
@@ -71,14 +88,13 @@ struct ProgramDetailList: View {
         ToolbarItemGroup(placement: .bottomBar) {
             Button {
                 modelData.programRunner.run(program: program)
-                isRunningProgram = true
+                modelData.programRunner.isRunningProgram = true
             } label: {
                 Label("play", systemImage: "play")
             }
             Spacer()
             Button {
                 modelData.programRunner.stop()
-                isRunningProgram = false
             } label: {
                 Label("stop", systemImage: "stop")
             }
