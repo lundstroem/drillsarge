@@ -69,6 +69,7 @@ struct ProgramDetailList: View {
                 }).toolbar {
                     makeToolbarContent()
                 }
+
                 VStack {
                     Text("\(modelData.programRunner.currentExerciseName)").font(.largeTitle).padding(EdgeInsets(top: 0, leading: 10, bottom: 0, trailing: 10))
                     if modelData.programRunner.durationLeftSeconds > 0 {

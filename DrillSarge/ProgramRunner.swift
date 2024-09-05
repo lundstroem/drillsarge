@@ -106,6 +106,7 @@ private extension ProgramRunner {
 
         synthesizer.stopSpeaking(at: .immediate)
 
+        isRunningProgram = false
         durationLeftSeconds = 0
         currentExerciseIndex = 0
         currentExerciseName = ""
