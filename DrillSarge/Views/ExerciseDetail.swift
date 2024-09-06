@@ -69,7 +69,6 @@ struct ExerciseDetail: View {
                 }
             }
         }
-
     }
 
     private func incrementStep() {

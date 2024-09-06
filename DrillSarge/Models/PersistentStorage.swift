@@ -27,6 +27,10 @@
 import Foundation
 
 struct PersistentStorage: Hashable, Identifiable, Codable {
+
+    // When adding more properties in the future, create unit
+    // tests to ensure backwards compatibility
+
     var id = UUID()
     var voiceName: String?
     var programs: [Program] = [Program(name: "program 1", exercises:

@@ -27,6 +27,7 @@
 import SwiftUI
 
 struct ProgramList: View {
+
     @Environment(\.scenePhase) var scenePhase
     @Environment(ModelData.self) private var modelData
 

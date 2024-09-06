@@ -32,17 +32,15 @@ struct ExerciseListItemView: View {
     @Binding var selectedExercise: Exercise
     @Binding var isDetailPresented: Bool
 
-    @State private var didTap: Bool = false
-    
     var body: some View {
-        HStack {
-            Text("\(exercise.name) \(exercise.duration)s")
-        }.onTapGesture {
-            didTap = true
+
+        Button(action: {
             selectedExercise = exercise
-            DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) { didTap = false }
             isDetailPresented.toggle()
-        }
+        }, label: {
+            Text("\(exercise.name) \(exercise.duration)s")
+        })
+        .contentShape(Rectangle())
     }
 }
 

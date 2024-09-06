@@ -116,7 +116,6 @@ private extension ProgramRunner {
     }
 
     private func speak(text: String, voice: AVSpeechSynthesisVoice? = nil) {
-        // TODO: Add more speech options.
         utterance = AVSpeechUtterance(string: text)
         utterance?.voice = voice ?? selectedVoice.speechVoice
         utterance?.rate = 0.5
