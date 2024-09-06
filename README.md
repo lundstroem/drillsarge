@@ -13,8 +13,6 @@ Your simple and dynamic training app for creating and running exercise programs.
 
 ## TODO
 - Fix so original order of exercises remain after running a shuffle
-- Add loop option to programs so that they can continue until stopped manually
-    Shuffled loops pick a new random exercise from the program skipping the one 
-    currently completed.
+- Add loop option to programs so that they can continue until stopped manually. Shuffled loops pick a new random exercise from the program skipping the one currently completed.
 - Add more speech options like pitch and other settings
 - Add user customizable text for "% seconds. Ready... Start" and "program finished"
